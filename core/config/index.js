@@ -1,4 +1,4 @@
 exports.config = {
-  url: 'http://frontend-test-iamalexandro.s3-website-us-west-2.amazonaws.com'
+  url: 'http://localhost:4200/'
 };
   
