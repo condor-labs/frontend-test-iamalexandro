@@ -6,6 +6,8 @@ export interface Sede {
   temp: number;
   humidity: number;
   windSpeed: number;
+  country: string;
+  description: string;
 }
 
 export interface Main {

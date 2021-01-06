@@ -37,7 +37,7 @@
   >
     <!-- weather icon -->
     <div class="main-widget__weather">
-      <i class="widget-icon wi wi-day-sunny" style="color: #FFB82C"></i>
+      <i class="widget-icon wi wi-{{ sede.icon }}"></i>
     </div>
 
     <!-- city name -->
@@ -59,11 +59,11 @@
         <!-- temperature and wind -->
         <div class="main-widget__weather-info">
           <div class="main-widget__humidity">
-            <div class="main-widget__circle main-widget__circle--humidity"></div>
+            <div class="circle circle--humidity"></div>
             <p class="no-margin main-widget__humidity-txt"> {{ sede.humidity }} %</p>
           </div>
           <div class="main-widget__wind">
-            <div class="main-widget__circle main-widget__circle--wind"></div>
+            <div class="circle circle--wind"></div>
             <p class="no-margin main-widget__wind-txt"> {{ sede.windSpeed }} m/s</p>
           </div>
         </div>

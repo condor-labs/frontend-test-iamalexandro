@@ -24,7 +24,7 @@ $widget-width-tablet: 85%;
 $widget-height-tablet: 30vw;
 
 $widget-width-desktop: 60%;
-$widget-height-desktop: 25vw;
+$widget-height-desktop: 20vw;
 
 //helpers
 .no-margin {
@@ -41,11 +41,25 @@ $widget-height-desktop: 25vw;
   flex-direction: row;
 }
 
+.circle {
+  width: .5rem;
+  height: .5rem;
+  border-radius: 50%;
+  align-self: center;
+
+  &--humidity {
+    background: $humidity;
+  }
+
+  &--wind {
+    background: $wind;
+  }
+}
+
 .main-widget {
-  margin-top: 5rem;
   font-family: Lato;
   width: $widget-width-mob;
-  margin: 5rem auto;
+  margin: 2rem auto;
   color: white;
 
   &__target {
@@ -92,7 +106,7 @@ $widget-height-desktop: 25vw;
   }
 
   .widget-icon {
-    transform: scale(5) translate(-6px, -6px);
+    transform: scale(4) translate(-6px, -3px);
   }
 
   &__info {
@@ -123,21 +137,6 @@ $widget-height-desktop: 25vw;
     text-shadow: 0 0 black;
   }
 
-  &__circle {
-    width: .5rem;
-    height: .5rem;
-    border-radius: 50%;
-    align-self: center;
-
-    &--humidity {
-      background: $humidity;
-    }
-
-    &--wind {
-      background: $wind;
-    }
-  }
-
   &__welcome-txt {
     font-size: 20px;
 
@@ -162,7 +161,7 @@ $widget-height-desktop: 25vw;
     }
 
     .widget-icon {
-      transform: scale(7) translate(-7px, -7px);
+      transform: scale(7) translate(-7px, -4px);
     }
 
     &__city {
@@ -188,7 +187,7 @@ $widget-height-desktop: 25vw;
     width: $widget-width-desktop;
 
     .widget-icon {
-      transform: scale(9) translate(-8px, -7px);
+      transform: scale(9) translate(-8px, -4px);
     }
 
     &__target {

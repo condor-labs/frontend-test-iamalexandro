@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SedesService } from '../core/services/sedes.service';
-import { Sede } from '../core/models/sede';
+import { SedesService } from '../../core/services/sedes.service';
+import { Sede } from '../../core/models/sede';
 
 @Component({
   selector: 'app-main-widget',
@@ -9,9 +9,7 @@ import { Sede } from '../core/models/sede';
 })
 export class MainWidgetComponent implements OnInit {
 
-  public sedes: any;
-
-  data: any;
+  public sedes: any = [];
   sede: Sede = {} as Sede;
 
   constructor( private sedesService: SedesService) { }
@@ -23,33 +21,19 @@ export class MainWidgetComponent implements OnInit {
 
   getSedes(): void {
     this.sedesService.getSedes()
-      .subscribe((data: Sede) => {
-        this.data = data;
-        this.sedes = this.data.places;
-        // console.log('sedes: ', this.sedes);
+      .subscribe((data: any) => {
+        this.sedes = data.places;
       }
     );
   }
 
   getSede(id: number): void{
     this.sedesService.getData()
-      .subscribe((data: Sede) => {
-        this.data = data;
-        const places = this.data.places;
+      .subscribe((data: any) => {
+        const places = data.places;
         const sede = places.filter( (place: any) => place.id === id )[0];
-
-        console.log('sede encontrada: ', sede.name);
-        console.log(sede);
         this.sede = this.mapSede(sede);
-
-        console.log('esto retorna getSede: ', this.sede);
         return this.sede;
-      },
-      (err: string) => {
-        console.log(err);
-      },
-      () => {
-        console.log('peticion exitosa!');
       }
     );
   }
@@ -63,6 +47,8 @@ export class MainWidgetComponent implements OnInit {
       temp: sede.main.temp,
       humidity: sede.main.humidity,
       windSpeed: sede.wind.speed,
+      country: sede.sys.country,
+      description: sede.description
     };
   }
 }

@@ -9,8 +9,6 @@ import { map } from 'rxjs/operators';
 export class SedesService {
 
   readonly ROOT_URL = 'https://run.mocky.io/v3/818d0158-727b-461e-9f76-06734ed7e582';
-  // data: any;
-  // sede: any;
 
   constructor(private http: HttpClient) { }
 
