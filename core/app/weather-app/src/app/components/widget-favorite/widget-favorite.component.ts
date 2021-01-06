@@ -24,7 +24,6 @@ export class WidgetFavoriteComponent implements OnInit {
         const sedes = data.places;
         this.sedes = sedes.filter( (sede: any) =>  !sede.main_headquarter );
         this.sedes = this.sedes.map( (sede: any) =>  this.mapSede(sede));
-        console.log(this.sedes);
       }
     );
   }

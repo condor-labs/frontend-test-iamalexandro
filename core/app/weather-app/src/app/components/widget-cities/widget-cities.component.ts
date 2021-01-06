@@ -25,7 +25,6 @@ export class WidgetCitiesComponent implements OnInit {
       .subscribe((data: any) => {
         const cities = data.result;
         this.cities = cities.map( (city: any) => this.mapCity(city));
-        console.log('this',this.cities);
         this.getRecomendedCities(this.cities);
       }
     );
@@ -43,7 +42,6 @@ export class WidgetCitiesComponent implements OnInit {
       let j = parseInt(i);
       if(j<3) this.mainRecomendedCities[j] = this.recomendedCities[j];
     }
-    console.log(this.mainRecomendedCities);
   }
 
   mapCity(city: any): CityDetail {

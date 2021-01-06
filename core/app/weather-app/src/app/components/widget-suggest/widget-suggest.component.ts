@@ -52,7 +52,6 @@ export class WidgetSuggestComponent implements OnInit {
         }
       }
     }
-    console.log(this.day);
   }
 
   mapDay(day: any): Day {

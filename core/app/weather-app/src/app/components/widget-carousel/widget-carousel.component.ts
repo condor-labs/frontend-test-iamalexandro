@@ -25,7 +25,6 @@ export class WidgetCarouselComponent implements OnInit {
       .subscribe((data: any) => {
         const listDays = data.list;
         this.days = listDays.map( (day: any) => this.mapDay(day));
-        console.log(this.days);
       }
     );
   }
